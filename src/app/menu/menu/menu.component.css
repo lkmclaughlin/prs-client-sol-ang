@@ -1,0 +1,26 @@
+nav {
+    background-color: #525253;
+}
+
+ul {
+    padding-left: 125px;
+}
+
+li {
+    display: inline-block;
+    width: 12%;
+}
+
+a {
+    color: silver;
+    text-decoration: none;
+    padding: 0 30px;
+
+}
+
+a:hover {
+    color: rgb(249, 227, 100);
+    font-weight: 600;
+    font-style: italic;
+    background: rgb(46, 46, 46);
+}

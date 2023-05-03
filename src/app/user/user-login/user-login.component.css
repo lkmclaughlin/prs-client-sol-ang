@@ -1,0 +1,18 @@
+#component {
+    text-align: center;
+}
+
+table {
+    width: 35%;
+    margin: 100px auto;
+    border: 4px solid grey;
+    text-align: center;
+}
+
+header {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(7, 0, 130);
+}

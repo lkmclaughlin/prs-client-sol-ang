@@ -1,0 +1,45 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="user">
+            <tbody id="colDetails">
+                <tr>
+                    <td>User Id</td>
+                    <td><input [(ngModel)]="user.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input [(ngModel)]="user.username" readonly></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input [(ngModel)]="user.password" type="password" readonly></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input [(ngModel)]="user.firstName" readonly></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input [(ngModel)]="user.lastName" readonly></td>
+                </tr>
+                <tr>
+                    <td>Phone #</td>
+                    <td><input [(ngModel)]="user.phone" readonly></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="user.email" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-warning btn-sm">Remove?</button>        
+        <span *ngIf="showVerifyRemove">
+            <span> || </span>
+            <button (click)="removeVerified()" class="btn btn-danger">Confirm REMOVE</button>
+        </span>
+    </main>
+</div>

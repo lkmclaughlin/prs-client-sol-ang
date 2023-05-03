@@ -1,0 +1,41 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="user">
+            <tbody id="colDetails">
+                <tr>
+                    <td>User Id</td>
+                    <td><input [(ngModel)]="user.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input [(ngModel)]="user.username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input [(ngModel)]="user.password" type="password"></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input [(ngModel)]="user.firstName"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input [(ngModel)]="user.lastName"></td>
+                </tr>
+                <tr>
+                    <td>Phone #</td>
+                    <td><input [(ngModel)]="user.phone"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="user.email"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="save()" class="btn btn-success">Save</button>
+    </main>
+</div>

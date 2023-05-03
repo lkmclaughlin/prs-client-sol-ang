@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+input, select {
+    border-radius: 9px;
+    width: 250pt;
+}
+
+#pageTitle {
+    
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 10%;
+    color: indigo;
+}
+
+#colNames {
+    font-weight: 500;
+    border-bottom: 4px;
+    border-color: darkgreen  
+}
+ 
+#colDetails {
+    font-weight: 500;
+}
+
+#td1 {
+    font-style: italic;
+    color: rgb(112, 111, 111);
+}

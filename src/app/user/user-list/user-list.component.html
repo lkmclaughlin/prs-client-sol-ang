@@ -1,0 +1,38 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+        <span> | </span>
+        <a routerLink="/user/add" class="">Add New User</a>
+    </header>
+    <table class="table table-striped table-sm">
+        <thead id="colNames">
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone #</th>
+                <th>Email</th>
+                <th>More</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.username}}</td>
+                <td id="td1">*user defined*</td>
+                <td>{{u.firstName}}</td>
+                <td>{{u.lastName}}</td>
+                <td>{{u.phone}}</td>
+                <td>{{u.email}}</td>
+                <td>
+                    <a routerLink="/user/info/{{u.id}}">Info</a>
+                    <span> | </span>
+                    <a routerLink="/user/edit/{{u.id}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

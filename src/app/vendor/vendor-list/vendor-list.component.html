@@ -1,0 +1,42 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+        <span> | </span>
+        <a routerLink="/vendor/add" class="">Add New Vendor</a>
+    </header>
+    <table class="table table-striped table-sm">
+        <thead id="colNames">
+            <tr>
+                <th>Vendor Id</th>
+                <th>Vendor Code</th>
+                <th>Company</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Phone #</th>
+                <th>Email</th>
+                <th>More</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors">
+                <td>{{v.id}}</td>
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                    <a routerLink="/vendor/info/{{v.id}}">Info</a>
+                    <span> | </span>
+                    <a routerLink="/vendor/edit/{{v.id}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,49 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="vendor">
+            <tbody id="colDetails">
+                <tr>
+                    <td>Vendor Id</td>
+                    <td><input [(ngModel)]="vendor.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Vendor Code</td>
+                    <td><input [(ngModel)]="vendor.code"></td>
+                </tr>
+                <tr>
+                    <td>Company</td>
+                    <td><input [(ngModel)]="vendor.name"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input [(ngModel)]="vendor.address"></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><input [(ngModel)]="vendor.city"></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input [(ngModel)]="vendor.state"></td>
+                </tr>
+                <tr>
+                    <td>zip</td>
+                    <td><input [(ngModel)]="vendor.zip"></td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td><input [(ngModel)]="vendor.phone"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input [(ngModel)]="vendor.email"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="save()" class="btn btn-success">Save</button>
+    </main>
+</div>

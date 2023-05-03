@@ -1,0 +1,61 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+        <span> | </span>
+        <a routerLink="/order/create" class="">Create New</a>
+    </header>
+    <table class = "table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Line Id</th>
+                <th>Request Id</th>
+                <th>Product Id</th>
+                <th>Quantity</th>
+                <th>More</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr sort:sortColumn:sortAsc>
+                <td>{{request.id}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.justification}}</td>
+                <td>{{request.rejectionReason}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>{{request.user?.username}}</td>
+                <td>
+                    <button (click)="review()" class="btn btn-link">Review</button>                 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a *ngIf="request" routerLink="requestline/add/{{request.id}}">Add New Request Item</a>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Line Id</th>
+                <th>Request Id</th>                
+                <th>Product Id</th>
+                <th>Quantity</th>
+                <th>User</th>
+                <th>More</th>
+            </tr>
+        </thead>
+        <!-- <tbody *ngIf="request && request.requestlines"> -->
+        <tbody>
+            <tr>
+                <td>{{requestlines.id}}</td>
+                <td>{{requestlines.product?.name}}</td>
+                <td>{{requestlines.product?.price | currency}}</td>
+                <td>{{requestlines.quantity}}</td>
+                <td>{{requestlines.quantity * (requestlines.product === null ? 0 : requestlines.product.price)}}</td>
+                <td>
+                    <a routerLink="/requestline/edit/{{requestlines.id}}">Edit</a>
+                    <span> | </span>
+                    <a (click)="remove(requestlines)" class="">Delete</a>
+                </td>
+        </tbody>
+    </table>
+</div>

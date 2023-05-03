@@ -1,0 +1,44 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+        <span> | </span>
+        <a routerLink="/request/add" class="">Add New Request</a>
+    </header>
+    <table class = "table table-striped table-sm">
+        <thead>
+            <tr>
+                <th><button (click)="selectColumn('id')" class= "btn btn-link">Request Id</button></th>
+                <th>description</th>
+                <th>justification</th>
+                <th>Rejection Reason</th>
+                <th>Delivery Mode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th><button (click)="selectColumn('userName')" class= "btn btn-link">User</button></th>
+                <th>More</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of requests | sort:sortColumn:sortAsc">
+                <td>{{r.id}}</td>
+                <td>{{r.description}}</td>
+                <td>{{r.justification}}</td>
+                <td>{{r.rejectionReason}}</td>
+                <td>{{r.deliveryMode}}</td>
+                <td>{{r.status}}</td>
+                <td>{{r.total | currency}}</td>
+                <td>{{r.user?.name}}</td>
+                <td>
+                    <a routerLink="/request/info/{{r.id}}">Info</a>
+                    <span> | </span>
+                    <a routerLink="/request/edit/{{r.id}}">Edit</a>
+                    <span> | </span>
+                    <button (click)="review(r)" class="btn btn-link">Review</button>
+                    <span> | </span>
+                    <a routerLink="/request/lines/{{r.id}}">Lines</a>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
