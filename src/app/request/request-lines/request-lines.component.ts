@@ -21,7 +21,6 @@ export class RequestLinesComponent {
   sortAsc: boolean|undefined;
 
   constructor(
-    private sys: SystemService,
     private reqSvc: RequestService,
     private route: ActivatedRoute
   ) {}

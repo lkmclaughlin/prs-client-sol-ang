@@ -20,6 +20,7 @@ export class UserListComponent {
   ) {}
   
   ngOnInit(): void{
+    //this.sys.chkLogin();
     if(this.sys.loggedInUser !== null) {
       console.log("A user is logged in!");
     } else {

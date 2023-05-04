@@ -1,1 +1,49 @@
-<p>request-info works!</p>
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="request">
+            <tbody>
+                <tr>
+                    <td>Request Id</td>
+                    <td><input [(ngModel)]="request.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input [(ngModel)]="request.description" readonly></td>
+                </tr>
+                <tr>
+                    <td>Justification</td>
+                    <td><input [(ngModel)]="request.justification" readonly></td>
+                </tr>
+                <tr>
+                    <td>Reason for Rejection</td>
+                    <td><input [(ngModel)]="request.rejectionReason" readonly></td>
+                </tr>
+                <tr>
+                    <td>Mode of Delivery</td>
+                    <td><input [(ngModel)]="request.deliveryMode" readonly></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td><input [(ngModel)]="request.status" readonly></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td><input [(ngModel)]="request.total" readonly></td>
+                </tr>
+                <tr>
+                    <td>User</td>
+                    <td><input [ngModel]="request.user === null ? 'No user!' : request.user.username" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-warning btn-sm">Remove?</button>        
+        <span *ngIf="showVerifyRemove">
+            <span> || </span>
+            <button (click)="removeVerified()" class="btn btn-danger">Confirm REMOVE</button>
+        </span>
+    </main>
+</div>

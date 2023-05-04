@@ -12,11 +12,17 @@
                 </tr>
                 <tr>
                     <td>Request Id</td>
-                    <td><input [(ngModel)]="requestline.requestId"></td>
+                    <td><input [(ngModel)]="requestline.requestId" readonly></td>
                 </tr>
                 <tr>
                     <td>Product Id</td>
-                    <td><input [(ngModel)]="requestline.productId"></td>
+                    <td>
+                        <select [(ngModel)]="requestline.productId">
+                             <option *ngFor="let p of products" value="{{p.id}}">
+                                {{p.name}}
+                             </option>
+                        </select>
+                </td>
                 </tr>
                 <tr>
                     <td>Quantity</td>
@@ -24,6 +30,6 @@
                 </tr>
             </tbody>
         </table>
-        <button (click)="save()" class="btn btn-success">Save</button>
+        <button (click)="save()" class="btn btn-success btn-sm">Save</button>
     </main>
 </div>
